@@ -4,6 +4,8 @@ import docx2pdf
 import win32com.client
 import os,sys,time
 from webutil import clear
+
+# Home Screen Choices
 def Choice():
     clear.clear()
     try:
@@ -20,7 +22,7 @@ def Choice():
         sys.exit()
     else:
         clear.clear()
-        address=input(f"Enter directory address\n")
+        address=input(f"Enter directory address\n")# Asking for directory
         while not os.path.isdir(address):
             clear.clear()
             print("Enter A Valid Path")
@@ -41,7 +43,7 @@ def Choice():
     
 def pdfMerger(address_of_directory):
     os.chdir(rf"{address_of_directory}")
-    name_of_file=input(f"Enter the name of file\n")
+    name_of_file=input(f"Enter the name of file\n")# Asking for file name
     files=[file for file in os.listdir() if file.endswith(".pdf")]
     merger=PdfFileMerger()
     for pdf in files:
@@ -52,12 +54,12 @@ def pdfMerger(address_of_directory):
 
     
 def Word(address):
-    path=os.path.join(address,"wordpdf")
+    path=os.path.join(address,"wordpdf")# Feel free to change the folder name
     os.mkdir(path)
     docx2pdf.convert(address,path)
 def PPT(address):
     os.chdir(address)
-    path=os.path.join(address,"PPTpdf")
+    path=os.path.join(address,"PPTpdf")# Feel free to change the folder name
     os.mkdir(path)
     powerpoint = win32com.client.Dispatch("Powerpoint.Application")
     for file in glob("*.pptx"):
