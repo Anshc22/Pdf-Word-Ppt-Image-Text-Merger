@@ -1,1 +1,1 @@
-@python C:\Users\Welcome\Desktop\PythonProjects\MyPythonScripts\filesmerger.py %*
+@python SamplePath\filesmerger.py %*
