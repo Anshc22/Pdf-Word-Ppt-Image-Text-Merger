@@ -3,19 +3,20 @@ from PyPDF2 import PdfFileMerger
 import docx2pdf
 import win32com.client
 import os,sys,time
-from webutil import clear
+import clear
+import img2pdf
 
 # Home Screen Choices
 def Choice():
     clear.clear()
     try:
         activity=int(input(f'''      **** FILE MERGER ****
-                           \n1 For merging PDF\n2 For docs\wordfiles to Pdf\n3 For PPT to Pdf\n4 For Exiting\n'''))
+                           \n1 For merging PDF\n2 For docs\wordfiles to Pdf\n3 For PPT to Pdf\n4 For Images to Pdf\n5 For Exiting\n'''))
     except:
         print("Enter A Valid Number")
         time.sleep(3)
         Choice()
-    if activity ==4:
+    if activity ==5:
         clear.clear()
         print("Exiting")
         time.sleep(3)
@@ -36,8 +37,10 @@ def Choice():
             Word(address)
         elif activity ==3:
             PPT(address)
+        elif activity ==4:
+            IMG(address)
         else:
-            print(f"\nEnter a number between 1-4")
+            print(f"\nEnter a number between 1-5")
             time.sleep(3)
         Choice()
     
@@ -75,6 +78,16 @@ def PPT(address):
         deck.Saveas(rf"{path}\{newname}",32)
         deck.Close()
     powerpoint.Quit()
+    
+def IMG(address):
+    os.chdir(address)
+    path=os.path.join(address,"imagepdf")
+    os.mkdir(path)
+    for file in os.listdir():
+        ext=os.path.splitext(file)[1]
+        if ext in [".jpg",".png",".jpeg"]:
+            with open(f"imagepdf\{file[:-4]}.pdf","wb") as f:
+                f.write(img2pdf.convert(file))
 
 if __name__ == "__main__":
     Choice()
