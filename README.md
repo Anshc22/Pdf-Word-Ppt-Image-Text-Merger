@@ -1,5 +1,8 @@
 # Pdf-Word-Ppt-Merger
 
+# Additional Dependencies
+Pypdf2,img2pdf,docx2pdf
+
 Download and use from anywhere( I just pop it open from the run service, by adding the path of directory where the file is to be stored to the environment path in Windows)
 
 Steps:-
