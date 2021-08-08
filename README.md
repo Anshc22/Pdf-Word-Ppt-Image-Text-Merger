@@ -1,4 +1,4 @@
-# Pdf-Word-Ppt-Merger
+# Pdf-Word-Ppt-Image-Merger
 
 Download and use from anywhere( I just pop it open from the run service, by adding the path of directory where the file is to be stored to the environment path in Windows)
 
