@@ -1,11 +1,12 @@
 # Pdf-Word-Ppt-Merger
 
+Download and use from anywhere( I just pop it open from the run service, by adding the path of directory where the file is to be stored to the environment path in Windows)
+
 # Additional Dependencies
 Pypdf2,img2pdf,docx2pdf
 
-Download and use from anywhere( I just pop it open from the run service, by adding the path of directory where the file is to be stored to the environment path in Windows)
 
-Steps:-
+# Steps:-
 
 Edit the path in the batch file and plug in the path of the directory where the files are stored
 
@@ -19,4 +20,4 @@ After selecting the option plug in the directory of the folder where the files a
 
 After completing one action ,the program will revert back to the home screen where in you can go again.
 
-Have Fun:)
+Have Fun :)
